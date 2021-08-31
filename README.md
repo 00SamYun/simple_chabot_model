@@ -36,7 +36,7 @@ The model takes a string of concatenated RDF triples and generates a text based 
 Other functiosn in the class are used to encode and decode the inputs and outputs of the model.
 
 ### Training on TPU 
-Both models are trained on the `tf.distribute.TPUStrategy` to decrease computational time. 
+Both models are trained on 8 cloud TPU workers using the `tf.distribute.TPUStrategy` to decrease computational time. 
 Cloud TPUs cannot access local directories so GCS buckets should be created in order to store preprocessed datasets as well as model weights. 
 
 ### References
