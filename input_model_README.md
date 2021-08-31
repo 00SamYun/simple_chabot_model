@@ -11,11 +11,13 @@ In this project, the model is required to predict the role of a word (subject, p
 dependent on both its part of speech and its position in a sentence. Thus the BERT model is the most appropriate.
 
 ### Loss, Metrics and Optimizers
+##### Loss
 The most commonly used loss function in multiclass classification is [Cross entropy](https://en.wikipedia.org/wiki/Cross_entropy).
 Tensorflow keras provides 2 variations of this loss function: `CategoricalCrossentropy` and `SparseCategoricalCrossentropy`. 
 
 Since our task only involves 3 labels, the tf.keras.losses.CategoricalCrossentropy(from_logits=True) loss function is used. 
 
+##### Metrics
 Metrics used for multiclass classification are narrowed down to the following 3:
 * categorical_accuracy: mean accuracy rate across all predictions
 * sparse_categorical_accuracy: categorical_accuracy for a large number of classes (target value is a large matrix populated by almost all zeros)
@@ -23,6 +25,7 @@ Metrics used for multiclass classification are narrowed down to the following 3:
 
 This model uses tf.keras.metrics.CategoricalAccuracy() to match with the loss function.
 
+##### Optimizers
 The most common optimizers are [SGD (stochastic gradient descent)](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) and Adam 
 ([adaptive learning rate method](https://wiki.tum.de/display/lfdv/Adaptive+Learning+Rate+Method)).
 
