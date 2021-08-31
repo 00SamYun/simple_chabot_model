@@ -1,0 +1,8 @@
+# run pip install -r requirements.txt to install the required packages
+
+transformers==4.9.2
+tf-models-official==2.4.0
+tfds-nightly
+tfds-nightly tensorflow matplotlib
+sentencepiece
+tensorflow-text
