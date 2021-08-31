@@ -6,7 +6,7 @@ It is composed of 3 main sections:
 * A multiclass classification based `InputModel` class, 
 * A data-to-text generation based `OutputModel` class.
 
-The input and output model are used to generate a response to each user input.
+The models should first be trained by running the `input_model_training.ipynb`, `output_mode_data.ipynb` and `output_model_training.ipynb` files before being used in the `main_program.py` file.
 
 ### Greetings
 Consists of 3 different greetings: 
@@ -35,8 +35,12 @@ The model takes a string of concatenated RDF triples and generates a text based 
 
 Other functiosn in the class are used to encode and decode the inputs and outputs of the model.
 
+### Training on TPU 
+Both models are trained on the `tf.distribute.TPUStrategy` to decrease computational time. 
+Cloud TPUs cannot access local directories so GCS buckets should be created in order to store preprocessed datasets as well as model weights. 
+
 ### References
-Dart dataset used in `input_model.py`
+Dart dataset used in `input_model_training.ipynb`
 ```
 @article{radev2020dart,
   title={DART: Open-Domain Structured Data Record to Text Generation},
@@ -45,7 +49,7 @@ Dart dataset used in `input_model.py`
   year={2020}
 ```
 
-webNLG dataset used in `output_model.py`
+webNLG dataset used in `output_model_data.ipynb`
 ```
 @inproceedings{gardent2017creating,
     title = ""Creating Training Corpora for {NLG} Micro-Planners"",
