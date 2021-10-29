@@ -1,4 +1,4 @@
-# output_model
+# generation_model
 This talks about the result from some research and experimenting with the output model.
 
 ### A little about T5 Transformers
