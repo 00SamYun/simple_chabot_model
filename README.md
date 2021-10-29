@@ -6,7 +6,7 @@ It is composed of 3 main sections:
 * A multiclass classification based `InputModel` class, 
 * A data-to-text generation based `OutputModel` class.
 
-The models should first be trained by running the `input_model_training.ipynb`, `output_mode_data.ipynb` and `output_model_training.ipynb` files before being used in the `main_program.py` file.
+The models should first be trained by running the `processing_model_training.ipynb`, `generation_mode_data.ipynb` and `generation_model_training.ipynb` files before being used in the `main_program.py` file.
 
 ### Greetings
 Consists of 3 different greetings: 
@@ -19,7 +19,7 @@ Note that this function is simplified to focus on the general flow of the conver
 4. takes in user response to joke / quote / fun fact
 5. performs sentiment analysis and outputs the 😄  emoji for a positive sentiment, 😞  for negative, and 😐  for neutral.
 
-### Input Model
+### Processing Model
 This takes the `BertClassifier` model from the [Tensorflow Model Garden](https://github.com/tensorflow/models/tree/master/official) and trains it on the `Dart` dataset from `tfds-nightly`.
 
 The model takes a word concatenated to its context (a sentence) as input and outputs a vector of logit values for each of the 3 labels: 
@@ -28,7 +28,7 @@ The model takes a word concatenated to its context (a sentence) as input and out
 Other functions in the class are used to preprocess the user input into the required format and transform the model outputs to 
 an appropriate input for the output model
 
-### Output Model
+### Generatiion Model
 This takes the [Huggingface](https://huggingface.co/transformers/) `T5ForConditionalGeneration` model and trains it on the `webNLG` dataset from `tfds-nightly`.
 
 The model takes a string of concatenated RDF triples and generates a text based on it.
